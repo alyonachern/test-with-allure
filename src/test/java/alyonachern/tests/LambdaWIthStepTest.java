@@ -1,19 +1,17 @@
 package alyonachern.tests;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static io.qameta.allure.Allure.step;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
 
-public class LambdaWIthStepTest {
+public class LambdaWIthStepTest extends BaseTest {
 
     private static final String REPOSITORY = "alyonachern/project-for-git-test";
     private static final String ISSUE_TEXT = "Issue for issue";
@@ -25,7 +23,6 @@ public class LambdaWIthStepTest {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Поиск Issue в репозитории")
     public void openIssueTest() {
-        SelenideLogger.addListener("allure",new AllureSelenide());
 
         step("Открыть главную страницу", () -> {
             open("https://github.com");
