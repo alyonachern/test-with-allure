@@ -11,6 +11,9 @@ public class BaseTest {
     @BeforeAll
     static void beforeAll() {
 
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("version", "100.0");
+        Configuration.browserSize = System.getProperty("windowSize", "1920x1080");
         Configuration.remote = System.getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
         Configuration.pageLoadStrategy = "eager";
     }
